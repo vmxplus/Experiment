@@ -4,7 +4,7 @@ import MySQLdb
 
 con = MySQLdb.connect(host='localhost',user='root', passwd='passw0rd', db='nvdbase');
 cursor = con.cursor()
-nvdTree = etree.parse("F:\NvdDataSet\\nvdcve-2.0-2014.xml")
+nvdTree = etree.parse("F:\NvdDataSet\\nvdcve-2.0-2015.xml")
 nsdv = {"vuln":"http://scap.nist.gov/schema/vulnerability/0.4"}
 nsdc = {"cvss":"http://scap.nist.gov/schema/cvss-v2/0.2"}
 root = nvdTree.getroot()
