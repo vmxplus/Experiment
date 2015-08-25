@@ -202,21 +202,15 @@ if __name__ == "__main__":
 
             size=len(scoreList)
             narray=np.array(scoreList)
-            mean=round(narray.mean(),1)
+            mean=round(narray.mean(),2)
             min=round(narray.min(),1)
             tfpoint=round(stats.scoreatpercentile(narray,25),1)
-            median=round(np.median(scoreList),1)
+            median=round(np.median(scoreList),3)
             sfpoint=round(stats.scoreatpercentile(narray,75),1)
             max=round(narray.max(),0)
             stddev=round(narray.std(),2)
             cv = round(narray.std()/narray.mean(),3)
             diffScores=len(Counter(scoreList))
-            count=0
-            for x in scoreList:
-                if x <= 6.5:
-                    count=count+1
-            print count*1.0/len(scoreList)
-            break;
             print mean,'\t',min,'\t',tfpoint,'\t',median,'\t',sfpoint,'\t',max,'\t',stddev,'\t',cv,'\t',diffScores
         print "============================================================================="
 
